@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <form action="/new" method="post">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">restaurant_id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+          name="exampleFormControlInput1"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput2">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput2"
+          name="exampleFormControlInput2"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput3">borough</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput3"
+          name="exampleFormControlInput3"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput4">Cuisine</label>
+        <input
+          type="text"
+          class="form-control"
+          name="exampleFormControlInput4"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput5">Photo</label>
+        <input
+          type="file"
+          class="form-control-file"
+          name="exampleFormControlInput5"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput6">PhotoType</label>
+        <input
+          type="text"
+          class="form-control"
+          name="exampleFormControlInput6"
+        />
+      </div>
+
+      <div class="form-row">
+        <!-- groups address -->
+        <div class="col-md-3 mb-3">
+          <label for="address01">Street</label>
+          <input
+            type="text"
+            class="form-control"
+            name="address01"
+            placeholder="Street"
+          />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="address02">building</label>
+          <input
+            type="text"
+            class="form-control"
+            name="address02"
+            placeholder="building"
+          />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="address03">zipcode</label>
+          <input
+            type="text"
+            class="form-control"
+            name="address03"
+            placeholder="zipcode"
+          />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="address04">coord</label>
+          <input
+            type="text"
+            class="form-control"
+            name="address04"
+            placeholder="coord"
+          />
+        </div>
+      </div>
+      <!-- groups address -->
+
+      <div class="form-row">
+        <!-- groups grdes -->
+        <div class="col-md-3 mb-3">
+          <label for="grdes01">User</label>
+          <input
+            type="text"
+            class="form-control"
+            id="grdes01"
+            name="grades01"
+            placeholder="User"
+          />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="grdes02">scores</label>
+          <input
+            type="text"
+            class="form-control"
+            name="grades02"
+            placeholder="scores"
+          />
+        </div>
+      </div>
+      <!-- groups grdes -->
+
+      <div class="form-group">
+        <label for="exampleFormControlInput7">owner</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput7"
+          name="exampleFormControlInput7"
+          value="<%= user %>"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <% if(c.length>0){%>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">name</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for (var i = 0; i < c.length; i++) { %>
+            <tr>
+              <th scope="row"><%= i %></th>
+              <td>
+                <a href="dashboard?rid=<%= c[i].restaurant_id %>">
+                  <%= c[i].name %></a
+                >
+              </td>
+              <td>
+                <form action="/update" method="post">
+                  <input
+                    type="hidden"
+                    id="custId"
+                    name="oid"
+                    value=<%= c[i].restaurant_id %>
+                  />
+
+                  <div class="col-auto my-1">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect"
+                      >data</label
+                    >
+                    <select
+                      class="custom-select mr-sm-2"
+                      id="inlineFormCustomSelect"
+                      name="forchange"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="restaurant_id">restaurant_id</option>
+                      <option value="street">street</option>
+                      <option value="zipcode">zipcode</option>
+                      <option value="building">building</option>
+                      <option value="coord">coord</option>
+                      <option value="borough">borough</option>
+                      <option value="cuisine">cuisine</option>
+                      <option value="grades">grades</option>
+                      <option value="name">name</option>
+                      <option value="photo">photo</option>
+                      <option value="photoType">photoType</option>
+                    </select>
+                  </div>
+
+                  <div class="col-auto my-1">
+                    <label for="exampleFormControlTextarea1">change to </label>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      name="changeto"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">update</button>
+                </form>
+              </td>
+
+              <td>
+                <a href="delete?rid=<%= c[i].restaurant_id %>"> delete</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+
+        <% } else { %>
+        <h1>Nothing to show!</h1>
+        <% } %>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
