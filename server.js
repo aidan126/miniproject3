@@ -8,7 +8,7 @@ const request = require("request"),
   app = express(),
   session = require("express-session"),
   upload = multer(), //for parsing multipart/form-data
-  port = 1337;
+  port = process.env.PORT || 1337;
 
 // create application/json parser
 const jsonParser = body_parser.json();
@@ -46,8 +46,6 @@ app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || port, () =>
-  console.log(`app listening on port ${port}!`)
-);
+app.listen(port, () => console.log(`app listening on port ${port}!`));
 
 // app.post("/restaurant", upload.array());
